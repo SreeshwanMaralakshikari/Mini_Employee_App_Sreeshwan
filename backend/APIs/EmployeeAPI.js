@@ -47,12 +47,12 @@ employeeApp.get("/list",async(req,res,next)=>{
 });
 
 // 3) Edit Employee
-employeeApp.put("/employees/:_id",async(req,res,next)=>{
+employeeApp.put("/employees/:id",async(req,res,next)=>{
     try 
     {
         //get modified employee id from req
-        const modifiedEmployeeId=req.params._id;
-
+        const modifiedEmployeeId=req.params.id;
+        
         //get modified employee body from req
         const modifiedEmployee=req.body;
 
@@ -80,11 +80,11 @@ employeeApp.put("/employees/:_id",async(req,res,next)=>{
 });
 
 // 4) Delete Employee
-employeeApp.delete("/employees/:_id",async(req,res,next)=>{
+employeeApp.delete("/employees/:id",async(req,res,next)=>{
     try
     {
         //get Id of Deleting Employee from req
-        const IdOfDeletedEmployee=req.params?._id;
+        const IdOfDeletedEmployee = req.params.id;
 
         //find by id and delete the employee with IdOfDeletedEmployee
         const deletedEmployee=await EmployeeModel.findByIdAndDelete(IdOfDeletedEmployee);
