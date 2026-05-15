@@ -31,10 +31,9 @@ employeeApp.get("/list",async(req,res,next)=>{
         const employeeList=await EmployeeModel.find();
 
         //if employee list length is 0,
-        if(employeeList.length===0) 
+        if(employeeList.length===0)
         {
-            //return employees not found
-            return res.status(404).json({message:"There are no Employees"});
+            return res.status(200).json({message:"No employees found",payload:[]});
         }
 
         //return res
