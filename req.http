@@ -1,0 +1,10 @@
+POST https://localhost:6002/employee-api/create-emp
+Content-Type: application/json
+
+{
+    "name":"ravi",
+    "email":"ravi@mail.com",
+    "mobile":"9949203909",
+    "desgination":"admin",
+    "companyName":"JPMorganChase"
+}
